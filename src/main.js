@@ -5,7 +5,7 @@ document.querySelector('#app').innerHTML = `
     <div class="bento-grid">
       <!-- Card 1: Low Moisture -->
       <div class="bento-card card-moisture">
-        <div class="card-bg" style="background-image: url('/filter_cake.png')"></div>
+        <div class="card-bg" style="background-image: url('./filter_cake.png')"></div>
         <div class="card-content">
           <h2>Low Moisture<br>Content in<br>Filter Cake</h2>
           <div class="card-stats">
@@ -35,7 +35,7 @@ document.querySelector('#app').innerHTML = `
             <div class="line"></div>
           </div>
         </div>
-        <img src="/machine_structure.png" alt="Machine Structure" class="structure-img" />
+        <img src="./machine_structure.png" alt="Machine Structure" class="structure-img" />
       </div>
 
       <!-- Card 3: 6X Capacity -->
@@ -59,7 +59,7 @@ document.querySelector('#app').innerHTML = `
         <div class="card-content">
           <h2>Advanced<br>Automation</h2>
         </div>
-        <img src="/automation_panel.png" alt="Automation Panel" class="automation-img" />
+        <img src="./automation_panel.png" alt="Automation Panel" class="automation-img" />
       </div>
     </div>
   </div>
