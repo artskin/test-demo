@@ -638,7 +638,7 @@ img {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -654,10 +654,12 @@ img {
         }
     }
 }
+.banner-indicator:has(.swiper-button-disabled){
+    background: rgba(255, 255, 255, 0.3);
+}
 
-.banner-indicator.active,
 .banner-indicator:hover {
-    background: rgba(255, 255, 255, 1);
+    
 }
 
 /* 介绍区域 */
