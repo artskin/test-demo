@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Press Features</title>
+    <style>
+        /* 基础变量与重置 */
+        :root {
+            --dark-1: #111;
+            --dark-2: #222;
+            --gray-1: #333;
+            --text-light: #fff;
+            --blue-accent: #2196F3;
+            --transition: all 0.3s ease;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, "Microsoft Yahei", sans-serif;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 3rem 0;
+            background-color: var(--dark-1);
+        }
+
+
+        /* 特性模块网格布局 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* 通用卡片样式 */
+        .feature-card {
+            background-color: var(--dark-2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            color: var(--text-light);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+
+        /* 1. 低水分滤饼卡片 */
+        .moisture-card {
+            background: url("moisture-bg.jpg") center/cover no-repeat;
+            background-color: rgba(0,0,0,0.6);
+            background-blend-mode: overlay;
+        }
+        .moisture-detail {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .moisture-bar {
+            margin-top: 1rem;
+        }
+        .moisture-label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        .bar-container {
+            width: 100%;
+            height: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            width: 10%; /* 对应≤10%水分 */
+            height: 100%;
+            background: var(--blue-accent);
+            border-radius: 6px;
+        }
+
+
+        /* 2. 紧凑结构卡片 */
+        .compact-card {
+            background-color: var(--gray-1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .compact-img-wrapper {
+            text-align: right;
+            margin-top: 1rem;
+        }
+        .compact-img {
+            max-width: 80%;
+            height: auto;
+        }
+        .top-view-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 0.3rem;
+            display: inline-block;
+        }
+
+
+        /* 3. 6X产能卡片 */
+        .capacity-card {
+            background-color: var(--dark-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .capacity-number {
+            font-size: 4rem;
+            font-weight: 700;
+            display: block;
+        }
+        .capacity-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.5rem;
+        }
+
+
+        /* 4. 自清洁+自动化卡片 */
+        .automation-card {
+            background-color: var(--gray-1);
+        }
+        .automation-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .self-cleaning {
+            margin-bottom: 1rem;
+        }
+        .advanced-automation {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .automation-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 0.5rem;
+            border-radius: 4px;
+        }
+
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .capacity-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 特性模块区域 -->
+    <section class="section">
+        <div class="container">
+            <div class="features-grid">
+                <!-- 1. 低水分滤饼 -->
+                <div class="feature-card moisture-card">
+                    <h3 class="feature-title">Low Moisture Content in Filter Cake</h3>
+                    <p class="moisture-detail">Max. Pressure ≤1.6 MPa</p>
+                    <div class="moisture-bar">
+                        <span class="moisture-label">Moisture Content ≤10%</span>
+                        <div class="bar-container">
+                            <div class="bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 紧凑结构 -->
+                <div class="feature-card compact-card">
+                    <h3 class="feature-title">Compact Structure</h3>
+                    <div class="compact-img-wrapper">
+                        <img src="compact-top-view.png" alt="Compact Structure Top View" class="compact-img">
+                        <span class="top-view-label">Top View</span>
+                    </div>
+                </div>
+
+                <!-- 3. 6X产能 -->
+                <div class="feature-card capacity-card">
+                    <div class="capacity-content">
+                        <span class="capacity-number">6X</span>
+                        <p class="capacity-desc">Capacity vs Plate-and-Frame Filter Press (Same Filtration Area)</p>
+                    </div>
+                </div>
+
+                <!-- 4. 自清洁+高级自动化 -->
+                <div class="feature-card automation-card">
+                    <div class="automation-content">
+                        <div class="self-cleaning">
+                            <h3 class="feature-title">Self-Cleaning Filter Cloth</h3>
+                        </div>
+                        <div class="advanced-automation">
+                            <h3 class="feature-title">Advanced Automation</h3>
+                            <img src="automation-control.png" alt="Automation Control Panel" class="automation-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
